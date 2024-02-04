@@ -7,7 +7,37 @@ body {
   background: #fcc;
 } 
 
+nav {
+  align-items: flex-start;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  font-size: 14px;
+  background: white;
+  box-shadow: 0 0 5px rgb(190, 190, 190);
+  border-radius: 10px;
+}
 
+nav a {
+  transition: background-color 0.7s;
+  padding: 5px 10px 0;
+  text-decoration: none;
+  color: black;
+}
+
+nav .blog {
+  border-radius: 5px;
+  background-color:#66aae2;
+  color:black;
+}
+
+nav a:hover {
+  color: #57a9ec;
+}
+
+nav a.blog:hover {
+  color: black;
+  background-color: #276ca5;
+}
 
 /* TABLET STYLES */
 
@@ -16,7 +46,7 @@ body {
   /* applies to screens wider than 499px */
   
   body {
-    background: #cfc;
+    background: white;
   } 
 }
 
