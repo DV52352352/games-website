@@ -4,40 +4,42 @@
 /* and above unless overwritten below */
 
 body {
-  background: #fcc;
+  margin: 0;
+  background: white;
 } 
 
+#menuToggler {
+  display: none;
+  margin:auto;
+}
+
 nav {
-  align-items: flex-start;
-  margin: 0 auto;
-  padding: 20px 20px 0;
+  display: flex;
+  flex-direction:row;
   font-size: 14px;
-  background: white;
-  box-shadow: 0 0 5px rgb(190, 190, 190);
-  border-radius: 10px;
+  background: rgb(176, 217, 250);
 }
 
 nav a {
   transition: background-color 0.7s;
-  padding: 5px 10px 0;
   text-decoration: none;
   color: black;
+  margin: 10px;
+  padding: 5px 20px;
+  background-color: #57a9ec;
 }
 
-nav .blog {
-  border-radius: 5px;
-  background-color:#66aae2;
-  color:black;
+nav .title {
+  font-weight: bold;
+  margin-left: 0;
+  margin-right: 60px;
+  background-color: rgb(176, 217, 250);
 }
 
 nav a:hover {
   color: #57a9ec;
 }
 
-nav a.blog:hover {
-  color: black;
-  background-color: #276ca5;
-}
 
 /* TABLET STYLES */
 
@@ -47,7 +49,11 @@ nav a.blog:hover {
   
   body {
     background: white;
-  } 
+  }
+
+  #menuToggler {
+    display: flex;
+  }
 }
 
 
@@ -59,6 +65,10 @@ nav a.blog:hover {
   /* applies to screens wider than 999px */
 
   body {
-    background: #ccf;
-  } 
+    background: white;
+  }
+  
+  #menuToggler {
+    display: none;
+  }
 }
