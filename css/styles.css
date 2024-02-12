@@ -9,31 +9,47 @@ body {
 } 
 
 #menuToggler {
-  display: none;
-  margin:auto;
+	position: top;
+	top: 0.5rem;
+  right: 0.5rem;
+	background-color: rgb(176, 217, 250);
+	color: black;
+	font-size: 40px;
+	text-align: left;
+	line-height: 1em;
+	padding: 0 1rem;
+	z-index: 1;
 }
 
 nav {
-  display: flex;
   flex-direction:row;
+  overflow: hidden;
   font-size: 14px;
   background: rgb(176, 217, 250);
 }
 
 nav a {
+  float: right;
   transition: background-color 0.7s;
   text-decoration: none;
+  text-align: center;
+  font-size: 30px;
   color: black;
-  margin: 10px;
   padding: 5px 20px;
   background-color: #57a9ec;
 }
 
 nav .title {
+  float: left;
   font-weight: bold;
   margin-left: 0;
-  margin-right: 60px;
+  margin-right: 50px;
   background-color: rgb(176, 217, 250);
+}
+
+nav.open {
+  position: static;
+  transform: translateX(0);
 }
 
 nav a:hover {
@@ -51,9 +67,22 @@ nav a:hover {
     background: white;
   }
 
-  #menuToggler {
+  nav {
+    position: static;
+    transform: translateX(0vw);
     display: flex;
+    flex-direction: row; 
   }
+    
+  nav a {
+    padding: 0.25em 0.5em;
+    margin: 0.5em 0.85em;
+  }
+
+  #menuToggler {
+    display:none;
+  }
+
 }
 
 
@@ -68,7 +97,4 @@ nav a:hover {
     background: white;
   }
   
-  #menuToggler {
-    display: none;
-  }
 }
