@@ -13,7 +13,7 @@ body {
 	top: 0.5rem;
   right: 0.5rem;
 	background-color: rgb(176, 217, 250);
-	color: black;
+	color: white;
 	font-size: 40px;
 	text-align: left;
 	line-height: 1em;
@@ -22,34 +22,35 @@ body {
 }
 
 nav {
-  flex-direction:row;
-  overflow: hidden;
-  font-size: 14px;
-  background: rgb(176, 217, 250);
+	position: top;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(176, 217, 250);
+	opacity: 0;
+	transform: translateX(100vw);
+	transition: transform 0.4s, opacity 0.6s;
 }
 
 nav a {
-  float: right;
-  transition: background-color 0.7s;
-  text-decoration: none;
-  text-align: center;
-  font-size: 30px;
-  color: black;
-  padding: 5px 20px;
-  background-color: #57a9ec;
+	font-size: 2em;
+	text-decoration: none;
+	padding: 0.5em 1em;
+	color: white;
+	text-align: center;
+	flex-grow: 1;
 }
 
 nav .title {
-  float: left;
   font-weight: bold;
-  margin-left: 0;
-  margin-right: 50px;
-  background-color: rgb(176, 217, 250);
 }
 
 nav.open {
-  position: static;
-  transform: translateX(0);
+	transition: transform 0.4s, opacity 0.2s;
+	transform: none;
+	opacity: 1;
 }
 
 nav a:hover {
@@ -68,15 +69,18 @@ nav a:hover {
   }
 
   nav {
-    position: static;
-    transform: translateX(0vw);
-    display: flex;
-    flex-direction: row; 
+		display: flex;
+		flex-direction: row;
+		transform: none;
+		opacity: 1;
+		height: auto;
+		position: static;
+		justify-content: center;
   }
     
   nav a {
-    padding: 0.25em 0.5em;
-    margin: 0.5em 0.85em;
+		font-size: 1.3em;
+		flex-grow: 0;
   }
 
   #menuToggler {
