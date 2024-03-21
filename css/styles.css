@@ -64,6 +64,23 @@ main {
 
 main section {
 	border-bottom: 2px solid rgb(176, 217, 250);
+	margin: 0em;
+	padding: 5em;
+
+}
+
+.grids {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	background-color: rgb(176, 217, 250);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns:auto 1fr;
+	font-size: 0.8em;
+	background-color: white;
 }
 
 /* TABLET STYLES */
