@@ -4,8 +4,9 @@
 /* and above unless overwritten below */
 
 body {
-  margin: 0;
-  background: white;
+	font-family: Nunito, sans-serif;
+  	margin: 0;
+  	background: white;
 } 
 
 #menuToggler {
@@ -59,24 +60,17 @@ nav a:hover {
 
 main {
 	text-align: center;
-	padding-top: 3em;
 }
 
-main .searchBar {
-    width: 50%;
-	height: 1.5em;
+main section {
+	border-bottom: 2px solid rgb(176, 217, 250);
 }
-
 
 /* TABLET STYLES */
 
 @media screen and (min-width: 500px) {
 
   /* applies to screens wider than 499px */
-  
-  body {
-    background: white;
-  }
 
   nav {
 		display: flex;
@@ -107,8 +101,5 @@ main .searchBar {
 
   /* applies to screens wider than 999px */
 
-  body {
-    background: white;
-  }
   
 }
