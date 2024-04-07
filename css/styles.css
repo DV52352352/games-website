@@ -65,14 +65,15 @@ main {
 main section {
 	border-bottom: 2px solid rgb(176, 217, 250);
 	margin: 0em;
-	padding: 5em;
-
+	padding: 2.5em;
+	padding-top: 5em;
+	padding-bottom: 5em;
 }
 
 .grids {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 2rem;
+	gap: 1rem;
 	background-color: rgb(176, 217, 250);
 }
 
@@ -81,6 +82,12 @@ main section {
 	grid-template-columns:auto 1fr;
 	font-size: 0.8em;
 	background-color: white;
+	border-radius: 25px;
+}
+
+.gridImage {
+	border-top-left-radius: 25px;
+	border-bottom-left-radius: 25px;
 }
 
 /* TABLET STYLES */
