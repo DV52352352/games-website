@@ -2,11 +2,14 @@
 
 /* applies to screens smaller than 500px (first breakpoint) */
 /* and above unless overwritten below */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
 
 body {
-	font-family: Nunito, sans-serif;
+	font-family: "Rubik Mono One", sans-serif;
+	color: white;
   	margin: 0;
-  	background: white;
+  	background-image: url("https://wallpapercave.com/wp/wp1933963.jpg");
 } 
 
 #menuToggler {
