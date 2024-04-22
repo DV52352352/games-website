@@ -9,7 +9,7 @@ body {
 	font-family: "Rubik Mono One", sans-serif;
 	color: white;
   	margin: 0;
-  	background-image: url("https://wallpapercave.com/wp/wp1933963.jpg");
+  	background-image: url("../images/background.jpg");
 } 
 
 #menuToggler {
@@ -63,6 +63,11 @@ nav a:hover {
 
 main {
 	text-align: center;
+	text-shadow:
+	-1px -1px 0 #000,
+	1px -1px 0 #000,
+	-1px 1px 0 #000,
+	1px 1px 0 #000;
 }
 
 main section {
@@ -71,6 +76,23 @@ main section {
 	padding: 2.5em;
 	padding-top: 5em;
 	padding-bottom: 5em;
+
+}
+
+.description {
+	align-items: center;
+	position: relative;
+	justify-content: center;
+	display: flex;
+}
+
+.description h1, h2 {
+	margin-bottom: 10px;
+}
+
+.description-image {
+	width: 20px;
+    height: 20px;
 }
 
 .grids {
