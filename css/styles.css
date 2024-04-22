@@ -62,12 +62,13 @@ nav a:hover {
 }
 
 main {
-	text-align: center;
+	/*text-align: center;*/
 	text-shadow:
 	-1px -1px 0 #000,
 	1px -1px 0 #000,
 	-1px 1px 0 #000,
 	1px 1px 0 #000;
+	
 }
 
 main section {
@@ -117,12 +118,27 @@ main section {
 	border-bottom-left-radius: 25px;
 }
 
-#search {
-	display: grid;
-	grid-column-gap: 0.5em;
-	grid-template-columns: min-content 1fr;
-	
+.games {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+    padding: 0;
+	padding-top: 2em;
 }
+
+.gamesTitle, .gamesDescription {
+	margin: 0;
+    padding: 0;
+	margin-left: 20px; /* Add left margin to the title */
+	flex: 1;
+}
+
+.gamesDescription {
+	max-width: 400px;
+	text-align: left;
+}
+
+
 /* TABLET STYLES */
 
 @media screen and (min-width: 500px) {
@@ -148,6 +164,9 @@ main section {
     display:none;
   }
 
+  .games {
+	padding-left: 0%;
+  }
 }
 
 
@@ -158,5 +177,8 @@ main section {
 
   /* applies to screens wider than 999px */
 
+  .games {
+	padding-left: 20%;
+  }
   
 }
