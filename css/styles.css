@@ -90,9 +90,11 @@ main section {
 	margin-bottom: 10px;
 }
 
-.description-image {
-	width: 20px;
-    height: 20px;
+.description image {
+	height: auto;
+	width: auto;
+	border: 5px solid #555;
+
 }
 
 .grids {
@@ -115,6 +117,12 @@ main section {
 	border-bottom-left-radius: 25px;
 }
 
+#search {
+	display: grid;
+	grid-column-gap: 0.5em;
+	grid-template-columns: min-content 1fr;
+	
+}
 /* TABLET STYLES */
 
 @media screen and (min-width: 500px) {
