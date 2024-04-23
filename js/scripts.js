@@ -7,6 +7,25 @@ let pageSize = 12;
 let currentPage;
 let objectIDs;
 
+function isContainerHidden() {
+  var container = document.querySelector(".showcasedGameImages");
+  if (!container) return true; // If the container doesn't exist, consider it hidden
+  return window.getComputedStyle(container).display === "none";
+}
+
+// If the container is hidden, show the slider
+if (isContainerHidden()) {
+  var containers = document.querySelectorAll(".showcasedGameImages");
+  containers.forEach(function(container) {
+    container.style.display = "block";
+  });
+} else {
+  var containers = document.querySelectorAll(".showcasedGameImages");
+  containers.forEach(function(container) {
+    container.style.display = "flex";
+  });
+}
+
 async function loadObject(id) {
   const url = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`;
   const response = await fetch(url);
