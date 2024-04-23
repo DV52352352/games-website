@@ -16,8 +16,8 @@
     <a href="#">Gaming News</a>
     <a href="#" >Contact Us</a>
   </nav>
-  <main>
-    <header class="games">
+  <main class="gamesMain">
+    <header>
       <div class="description">
         <h1 class="gamesTitle">Free Games</h1>
         <p class="gamesDescription">your gateway to endless entertainment without spending a dime!
@@ -38,27 +38,28 @@
             <img src="images/fallGuys_banner.png" alt="fall_guys_banner">
             <p class="showcasedGameImageText">Fall Guys</p>
           </a>
-        </div>
+        </div>       
       </div>
-      <h1>The Metropolitan Museum of Art Collection</h1>
-			<section id="search">
-				<label for="query">Search:</label>
-				<input id="query" type="search">
-			</section>
-			<section id="meta">
-				<span id="count"></span>
-				<span id="pagination">
-					<button id="prev">&lt;</button>
-					page <span id="pageIndicator">0</span> of <span id="nPages">0</span>
-					<button id="next">&gt;</button>
-				</span>
-			</section>
-		</header>
-    <div id="loader"></div>
-		<main id="results" class="grids"></main>
-		<footer>
-			developed using the <a href="https://metmuseum.github.io/">metmuseum API</a>
-		</footer>
+    </header>
+      <h1>Popular Games</h1>
+      <section class="gameGrids">
+        <article class="gameGrid">
+          <img src="images/honkai_star_rail_image.jpg" alt ="test" class="gameGridImage">
+          <p>Honkai Star Rail</p>
+        </article>
+        <article class="gameGrid">
+          <img src="https://picsum.photos/id/120/200" alt ="test" class="gameGridImage">
+          <div class="gameGridText">
+            <p>Test</p>
+          </div>
+        </article>
+        <article class="gameGrid">
+          <img src="https://picsum.photos/id/120/200" alt ="test" class="gameGridImage">
+          <div class="gameGridText">
+            <p>Test</p>
+          </div>
+        </article>
+      </section>
   </main>
   <script src="js/scripts.js"></script>
 </body>
