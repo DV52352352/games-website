@@ -153,7 +153,13 @@ main section {
 .showcasedGameImageContainer, .showcasedGameImageContainer img {
 	position: relative;
 	border-radius: 20px;
+	transition: transform 0.2s;
 }
+
+.showcasedGameImageContainer:hover {
+	border-color: blue; /* Highlight border color on hover */
+	transform: scale(1.1); /* Zoom effect on hover */
+  }
 
 .showcasedGameImageText {
 	position: absolute;
@@ -162,6 +168,7 @@ main section {
 	color: white; /* Text color */
 	padding: 5px; /* Padding around the text */
 	border-radius: 0 10px 0 20px; /* Adjust the border-radius to match the image */
+	
 }
 
 .gamesTitle, .gamesDescription {
