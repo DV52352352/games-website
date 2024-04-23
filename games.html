@@ -17,14 +17,32 @@
     <a href="#" >Contact Us</a>
   </nav>
   <main>
-    <header>
-
-      <h1>Free Games</h1>
-      <p>your gateway to endless entertainment without spending a dime!
-         Dive into a treasure trove of captivating games that cater to every gaming preference.
-          Whether you're a casual player looking for quick fun or a hardcore gamer seeking a challenge,
-           we've got something for everyone. </p>
+    <header class="games">
+      <h1 class="gamesTitle">Free Games</h1>
+      <p class="gamesDescription">your gateway to endless entertainment without spending a dime!
+        Dive into a treasure trove of captivating games that cater to every gaming preference.
+        Whether you're a casual player looking for quick fun or a hardcore gamer seeking a challenge,
+        we've got something for everyone.
+      </p>
+      <h1>The Metropolitan Museum of Art Collection</h1>
+			<section id="search">
+				<label for="query">Search:</label>
+				<input id="query" type="search">
+			</section>
+			<section id="meta">
+				<span id="count"></span>
+				<span id="pagination">
+					<button id="prev">&lt;</button>
+					page <span id="pageIndicator">0</span> of <span id="nPages">0</span>
+					<button id="next">&gt;</button>
+				</span>
+			</section>
 		</header>
+    <div id="loader"></div>
+		<main id="results" class="grids"></main>
+		<footer>
+			developed using the <a href="https://metmuseum.github.io/">metmuseum API</a>
+		</footer>
   </main>
   <script src="js/scripts.js"></script>
 </body>
