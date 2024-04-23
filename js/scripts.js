@@ -34,14 +34,24 @@
   
 	  title.textContent = obj.title;
 	  primaryImageSmall.src = obj.primaryImageSmall;
+    primaryImageSmall.classList.add('gridImage');
 	  primaryImageSmall.alt = `${obj.title} (small image)`;
-	  primaryImage.src = 'https://picsum.photos/id/120/200';
+	  primaryImage.src = obj.primaryImage;
+    primaryImage.classList.add('gridImage');
 	  primaryImage.alt = obj.title;
 	  modal.className = "modal";
 	  objectName.textContent = obj.objectName;
-	  objectDate.textContent = `, ${obj.objectDate}`;
+    objectName.classList.add('gridText');
 	  medium.textContent = obj.medium;
   
+    primaryImageSmall.onerror = function() {
+      this.src = 'images/no_image_found.png';
+    };
+
+    primaryImage.onerror = function() {
+      this.src = 'images/no_image_found.png';
+    };
+
 	  article.addEventListener('click', ev => {
 		  modal.classList.toggle('on');
 	  });
