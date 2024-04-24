@@ -299,22 +299,20 @@ button:hover {
     background-color: rgb(83, 143, 192);
 }
 	
-
-
 .resultGrids {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	padding-top: 1rem;
+    gap: 1rem;
     background-color: rgb(176, 217, 250);
 }
 
 .resultGrid {
-    width: 300px; /* Fixed width for the grid items */
-    height: 300px; /* Fixed height for the grid items */
+    width: 432px;
+    height: 243px;
     display: grid;
     grid-template-columns: auto 1fr;
     position: relative;
-    gap: 2rem;
 
 }
 
@@ -350,6 +348,13 @@ article {
 	padding: 0.5em 0;
 }
 
+footer {
+	position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
 
 #loader {
 	font-size: 3em;
@@ -476,5 +481,6 @@ article {
 		padding-left: 20%;
 		padding-right: 20%;
 	}
+
 
 }
