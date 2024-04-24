@@ -172,11 +172,23 @@ h2 {
 .gamesTitle, .gamesDescription {
 	margin: 0;
 	padding: 0;
+	color: white;
 }
 
 .gamesDescription {
 	max-width: 800px;
 	text-align: left;
+}
+
+.gridGamesTitle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align:center;
+	opacity: 0;
+	transition: opacity 0.25s ease;
 }
 
 .gameGrids {
@@ -186,10 +198,15 @@ h2 {
 	padding: 0;
 }
 
+.gameGrid a {
+	text-decoration: none;
+}
+
 .gameGrid {
 	display: grid;
 	grid-template-rows: auto 1fr;
 	position: relative;
+	max-width: 100%;
 }
 
 .gameGridImage {
@@ -201,10 +218,13 @@ h2 {
 	border-radius: 20px;
 }
 
-.gameGridImage:hover {
+.gameGrid:hover .gameGridImage{
 	filter: brightness(50%);
 }
 
+.gameGrid:hover .gridGamesTitle {
+	opacity: 1;
+}
 
 .results {
 	display: grid;
