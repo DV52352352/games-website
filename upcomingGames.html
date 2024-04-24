@@ -16,29 +16,33 @@
     <a href="#">Gaming News</a>
     <a href="#" >Contact Us</a>
   </nav>
-  <main class="gamesMain">
-    <header>
-      <div class="searchSection">
-        <h1 class="searchGamesTitle">Search for Games</h1>
-        <section id="search">
-          <input id="query" type="search">
-          <button>Search</button>
+  <main>
+    <div>
+      <header class="gamesMain">
+        <div class="searchSection">
+          <h1 class="searchGamesTitle">Search for Games</h1>
+          <section id="search">
+            <input id="query" type="search">
+            <button>Search</button>
+          </section>
+        </div>
+        <section id="meta">
+          <span id="count"></span>
+          <span id="pagination">
+            <button id="prev">&lt;</button>
+            page <span id="pageIndicator">0</span> of <span id="nPages">0</span>
+            <button id="next">&gt;</button>
+          </span>
         </section>
-      </div>
-			<section id="meta">
-				<span id="count"></span>
-				<span id="pagination">
-					<button id="prev">&lt;</button>
-					page <span id="pageIndicator">0</span> of <span id="nPages">0</span>
-					<button id="next">&gt;</button>
-				</span>
-			</section>
-		</header>
-    <div id="loader"></div>
-		<main id="results" class="resultGrids"></main>
-		<footer>
-			developed using the <a href="https://metmuseum.github.io/">metmuseum API</a>
-		</footer>
+      </header>
+    </div>
+    <div class="resultsLayout">
+      <div id="loader"></div>
+      <main id="results" class="resultGrids"></main>
+      <footer>
+        developed using the <a href="https://rawg.io/">RAWG Video Games Database API</a>
+      </footer>
+    </div>
   </main>
   <script src="js/scripts.js"></script>
 </body>

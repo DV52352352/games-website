@@ -5,92 +5,57 @@ menuToggler.addEventListener('click', ev => {
 
 let pageSize = 12;
 let currentPage;
-let objectIDs;
+let gameData; 
 
-async function loadObject(id) {
-  const url = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`;
-  const response = await fetch(url);
-  return response.json();
+let apiKey = '877a9f1fba75487095118a5fb2777bd8';
+
+async function loadGames(query) {
+  let baseURL = `https://api.rawg.io/api/games`;
+  const response = await fetch(`${baseURL}?key=${apiKey}&search=${query}`);
+  const data = await response.json();
+  return data.results; 
 }
 
-async function loadSearch(query) {
-  let baseURL = `https://collectionapi.metmuseum.org/public/collection/v1/search`;
-  const response = await fetch(`${baseURL}?hasImages=true&q=${query}`);
-  return response.json();
-}
-
-function buildArticleFromData(obj) {
-  const article = document.createElement("article");
-  article.classList.add('resultGrid');
-  const title = document.createElement("h3");
-  const primaryImageSmall = document.createElement("img");
-  const modal = document.createElement('div');
-  const primaryImage = document.createElement("img");
-  const objectInfo = document.createElement("p");
-  const objectName = document.createElement("span");
-  const objectDate = document.createElement("span");
-  //const medium = document.createElement("p");
-
-  title.textContent = obj.title;
-  primaryImageSmall.src = obj.primaryImageSmall;
-  primaryImageSmall.classList.add('resultGridImage');
-  primaryImageSmall.alt = `${obj.title} (small image)`;
-  primaryImage.src = obj.primaryImage;
-  primaryImage.classList.add('resultGridImage');
-  primaryImage.alt = obj.title;
-  modal.className = "modal";
-  objectName.textContent = obj.objectName;
-  objectName.classList.add('resultGridText');
-  //medium.textContent = obj.medium;
-
-  primaryImageSmall.onerror = function () {
-    this.src = 'images/no_image_found.png';
-  };
-
-  primaryImage.onerror = function () {
-    this.src = 'images/no_image_found.png';
-  };
-
-  article.addEventListener('click', ev => {
-    modal.classList.toggle('on');
-  });
-
-  article.appendChild(title);
-  article.appendChild(modal);
-  modal.appendChild(primaryImage);
-  article.appendChild(primaryImageSmall);
-  article.appendChild(objectInfo);
-  //article.appendChild(medium);
-
-  objectInfo.appendChild(objectName);
-  if (obj.objectDate) {
-    objectInfo.appendChild(objectDate);
-  }
-
-  return article;
-}
-//
-// async function insertArticle(id) {
-//   const obj = await loadObject(id);
-//   const article = buildArticleFromData(obj);
-//   results.appendChild(article);
-// }
-
-async function insertArticles(objIds) {
-  const objects = await Promise.all(objIds.map(loadObject))
-  const articles = objects.map(buildArticleFromData);
+async function insertGames(gameData) {
+  const articles = gameData.map(buildArticleFromData);
   articles.forEach(a => results.appendChild(a));
 }
 
 async function doSearch() {
   clearResults();
   loader.classList.add("waiting");
-  const result = await loadSearch(query.value);
-  objectIDs = result.objectIDs || [];   // store the search result (or an empty list) in our variable
-  count.textContent = `found ${objectIDs.length} results for "${query.value}"`;
-  nPages.textContent = Math.ceil(objectIDs.length / pageSize);
-  currentPage = 1;     // set the currentPage
-  loadPage();          // load the appropriate page
+  gameData = await loadGames(query.value);
+  count.textContent = `found ${gameData.length} results for "${query.value}"`;
+  nPages.textContent = Math.ceil(gameData.length / pageSize);
+  currentPage = 1;
+  loadPage();
+}
+
+function buildArticleFromData(game) {
+  const article = document.createElement("article");
+  article.classList.add('resultGrid');
+
+  const title = document.createElement("h3");
+  title.textContent = game.name;
+
+  const image = document.createElement("img");
+  image.src = game.background_image;
+  image.classList.add('resultGridImage');
+  image.alt = game.name;
+
+  /*article.addEventListener('click', ev => {
+    
+  });*/
+
+  article.appendChild(title);
+  article.appendChild(image);
+
+  return article;
+}
+
+async function insertArticles(gameData) {
+  const articles = gameData.map(buildArticleFromData);
+  articles.forEach(a => results.appendChild(a));
 }
 
 function clearResults() {
@@ -101,23 +66,23 @@ function clearResults() {
 
 async function loadPage() {
   clearResults();
-  const myObjects = objectIDs.slice((currentPage - 1) * pageSize, currentPage * pageSize);
-  // myObjects.forEach(insertArticle);
+  const myGames = gameData.slice((currentPage - 1) * pageSize, currentPage * pageSize);
   loader.classList.add("waiting");
-  await insertArticles(myObjects);
+  await insertArticles(myGames);
   loader.classList.remove("waiting");
   pageIndicator.textContent = currentPage;
 }
 
 function nextPage() {
   currentPage += 1;
-  const nPages = Math.ceil(objectIDs.length / pageSize);
+  const nPages = Math.ceil(gameData.length / pageSize);
   if (currentPage > nPages) { currentPage = 1; }
   loadPage();
 }
+
 function prevPage() {
   currentPage -= 1;
-  const nPages = Math.ceil(objectIDs.length / pageSize);
+  const nPages = Math.ceil(gameData.length / pageSize);
   if (currentPage < 1) { currentPage = nPages; }
   loadPage();
 }
