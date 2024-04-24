@@ -110,7 +110,6 @@ h2 {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	position: relative;
-
 }
 
 .gridImage {
@@ -267,11 +266,77 @@ h2 {
 .gameGridColumn:hover .gameGridColumnImage {
 	filter: brightness(50%);
 }
+
+.searchSection {
+	padding-top: 2em;
+	text-align: center;
+}
+
+.searchGamesTitle {
+    margin-bottom: -2em;
+}
+
+#query {
+    padding: 0.25em;
+    border: 1.75px solid #ccc;
+    border-radius: 25px;
+    font-size: 1em;
+    margin-right: 0.5em;
+    flex: 1;
+}
+
+button {
+    padding: 0.25em 2em;
+    background-color: rgb(121, 192, 250);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(83, 143, 192);
+}
 	
-.results {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	grid-column-gap: 2em;
+
+
+.resultGrids {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    background-color: rgb(176, 217, 250);
+}
+
+.resultGrid {
+    width: 300px; /* Fixed width for the grid items */
+    height: 300px; /* Fixed height for the grid items */
+    display: grid;
+    grid-template-columns: auto 1fr;
+    position: relative;
+    gap: 2rem;
+
+}
+
+.resultGridImage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.resultGridText {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 10px;
+}
+
+.gamesMain {
+	gap: 2em;
 }
 
 article {
@@ -284,6 +349,7 @@ article {
 	justify-content: space-between;
 	padding: 0.5em 0;
 }
+
 
 #loader {
 	font-size: 3em;
@@ -308,15 +374,17 @@ article {
 
 .modal {
 	display: none;
-	position: fixed;
 	height: 100vh;
 	width: 100vw;
 	background-color: hsla(0, 70%, 10%, 0.7);
 	top: 0;
 	left: 0;
+	gap: 2em;
 	overflow-y: scroll;
 	align-items: center;
 }
+
+
 
 .modal.on {
 	display: flex;

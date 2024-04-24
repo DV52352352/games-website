@@ -7,25 +7,6 @@ let pageSize = 12;
 let currentPage;
 let objectIDs;
 
-function isContainerHidden() {
-  var container = document.querySelector(".showcasedGameImages");
-  if (!container) return true; // If the container doesn't exist, consider it hidden
-  return window.getComputedStyle(container).display === "none";
-}
-
-// If the container is hidden, show the slider
-if (isContainerHidden()) {
-  var containers = document.querySelectorAll(".showcasedGameImages");
-  containers.forEach(function(container) {
-    container.style.display = "block";
-  });
-} else {
-  var containers = document.querySelectorAll(".showcasedGameImages");
-  containers.forEach(function(container) {
-    container.style.display = "flex";
-  });
-}
-
 async function loadObject(id) {
   const url = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`;
   const response = await fetch(url);
@@ -40,7 +21,7 @@ async function loadSearch(query) {
 
 function buildArticleFromData(obj) {
   const article = document.createElement("article");
-  article.classList.add('grid');
+  article.classList.add('resultGrid');
   const title = document.createElement("h3");
   const primaryImageSmall = document.createElement("img");
   const modal = document.createElement('div');
@@ -48,20 +29,19 @@ function buildArticleFromData(obj) {
   const objectInfo = document.createElement("p");
   const objectName = document.createElement("span");
   const objectDate = document.createElement("span");
-  const medium = document.createElement("p");
-  const testtestest = document.createElement("p");
+  //const medium = document.createElement("p");
 
   title.textContent = obj.title;
   primaryImageSmall.src = obj.primaryImageSmall;
-  primaryImageSmall.classList.add('gridImage');
+  primaryImageSmall.classList.add('resultGridImage');
   primaryImageSmall.alt = `${obj.title} (small image)`;
   primaryImage.src = obj.primaryImage;
-  primaryImage.classList.add('gridImage');
+  primaryImage.classList.add('resultGridImage');
   primaryImage.alt = obj.title;
   modal.className = "modal";
   objectName.textContent = obj.objectName;
-  objectName.classList.add('gridText');
-  medium.textContent = obj.medium;
+  objectName.classList.add('resultGridText');
+  //medium.textContent = obj.medium;
 
   primaryImageSmall.onerror = function () {
     this.src = 'images/no_image_found.png';
@@ -80,7 +60,7 @@ function buildArticleFromData(obj) {
   modal.appendChild(primaryImage);
   article.appendChild(primaryImageSmall);
   article.appendChild(objectInfo);
-  article.appendChild(medium);
+  //article.appendChild(medium);
 
   objectInfo.appendChild(objectName);
   if (obj.objectDate) {
