@@ -298,11 +298,11 @@ button {
 button:hover {
     background-color: rgb(83, 143, 192);
 }
-	
+
 .resultGrids {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-	padding-top: 1rem;
+	padding: 0.5rem;
     gap: 1rem;
     background-color: rgb(176, 217, 250);
 }
@@ -313,7 +313,6 @@ button:hover {
     display: grid;
     grid-template-columns: auto 1fr;
     position: relative;
-
 }
 
 .resultGridImage {
@@ -323,15 +322,28 @@ button:hover {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	border-radius: 20px;
 }
 
 .resultGridText {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(255, 255, 255, 0.7);
-	padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
+
+.resultGrid:hover .resultGridText {
+    opacity: 1;
+}
+
+.resultGrid:hover .resultGridImage {
+	filter: brightness(50%);
+}
+
 
 .gamesMain {
 	gap: 2em;
@@ -388,8 +400,6 @@ footer {
 	overflow-y: scroll;
 	align-items: center;
 }
-
-
 
 .modal.on {
 	display: flex;

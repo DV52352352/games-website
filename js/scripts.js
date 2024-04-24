@@ -32,11 +32,21 @@ async function doSearch() {
 }
 
 function buildArticleFromData(game) {
+
   const article = document.createElement("article");
   article.classList.add('resultGrid');
 
+  const gameDetails = document.createElement("div");
+  gameDetails.classList.add('resultGridText');
+
+  const rating = document.createElement("h4");
+  rating.textContent = "metacritic: " + game.metacritic;
+
   const title = document.createElement("h3");
   title.textContent = game.name;
+
+  gameDetails.appendChild(title);
+  gameDetails.appendChild(rating);
 
   const image = document.createElement("img");
   image.src = game.background_image;
@@ -47,8 +57,8 @@ function buildArticleFromData(game) {
     
   });*/
 
-  article.appendChild(title);
   article.appendChild(image);
+  article.appendChild(gameDetails);
 
   return article;
 }
