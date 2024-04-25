@@ -25,6 +25,10 @@ body {
 	z-index: 1;
 }
 
+.selectedPage {
+    border-bottom: 3px solid rgb(20, 187, 253);
+}
+
 nav {
 	position: fixed;
 	width: 100vw;
