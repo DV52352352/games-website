@@ -7,7 +7,7 @@ menuToggler.addEventListener('click', ev => {
 
 let pageSize = 12;
 let currentPage;
-let gameData; 
+let gameData;
 
 let apiKey = '877a9f1fba75487095118a5fb2777bd8';
 
@@ -15,7 +15,7 @@ async function loadGames(query) {
   let baseURL = `https://api.rawg.io/api/games`;
   const response = await fetch(`${baseURL}?key=${apiKey}&search=${query}`);
   const data = await response.json();
-  return data.results; 
+  return data.results;
 }
 
 async function insertGames(gameData) {
@@ -35,7 +35,7 @@ async function doSearch() {
 
 function buildArticleFromData(game) {
   //Filters out games that have no metacritic rating
-  if(game.metacritic == null) {
+  if (game.metacritic == null) {
     return null;
   }
 
