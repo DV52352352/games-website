@@ -18,27 +18,27 @@ body {
 }
 
 @keyframes slideshowFade {
-    0%
-    {
-        background-image: url('../images/background2.png');
-    }
-    100%
-    {
-        background-image: url('../images/background.png');
-    }
+	0% {
+		background-image: url('../images/background2.png');
+	}
+
+	100% {
+		background-image: url('../images/background.png');
+	}
 }
 
 .homeText {
-    text-align: center;
+	text-align: center;
 	margin: 2em;
 }
 
-.descriptionText h1, .descriptionText h3 {
-    margin: 0;	
+.descriptionText h1,
+.descriptionText h3 {
+	margin: 0;
 }
 
 .descriptionText {
-	margin-bottom: 20px; 
+	margin-bottom: 20px;
 }
 
 .homeButton {
@@ -56,7 +56,7 @@ body {
 	text-align: left;
 	line-height: 1em;
 	padding: 0 1rem;
-	z-index: 1;
+	z-index: 2;
 }
 
 .selectedPage {
@@ -73,6 +73,7 @@ nav {
 	opacity: 0;
 	transform: translateX(100vw);
 	transition: transform 0.4s, opacity 0.6s;
+	z-index: 1;
 }
 
 nav a {
@@ -89,9 +90,14 @@ nav .title {
 }
 
 nav.open {
+	background-color: rgb(176, 217, 250);
 	transition: transform 0.4s, opacity 0.2s;
 	transform: none;
 	opacity: 1;
+}
+
+nav.open .selectedPage {
+	border-bottom: transparent;
 }
 
 nav a:hover {
@@ -296,6 +302,7 @@ main section {
 	margin-bottom: -2em;
 }
 
+
 #query {
 	padding: 0.25em;
 	border: 1.75px solid #ccc;
@@ -303,6 +310,7 @@ main section {
 	font-size: 1em;
 	margin-right: 0.5em;
 	flex: 1;
+	width: 60%;
 }
 
 button {
@@ -532,6 +540,16 @@ form input:not(:placeholder-shown):invalid {
 @media screen and (min-width: 500px) {
 
 	/* applies to screens wider than 499px */
+
+	.gamesMain {
+		padding-left: 0%;
+		padding-right: 0%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+
+	/* applies to screens wider than 1199px */
 	nav {
 		display: flex;
 		flex-direction: row;
@@ -551,17 +569,11 @@ form input:not(:placeholder-shown):invalid {
 		display: none;
 	}
 
-	.gamesMain {
-		padding-left: 0%;
-		padding-right: 0%;
-	}
 }
-
-
 
 /* DESKTOP STYLES */
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 100px) {
 
 	/* applies to screens wider than 999px */
 
@@ -575,6 +587,4 @@ form input:not(:placeholder-shown):invalid {
 		padding-left: 20%;
 		padding-right: 20%;
 	}
-
-
 }
