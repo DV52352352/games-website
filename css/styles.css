@@ -10,13 +10,17 @@ body {
 	color: white;
 	margin: 0;
 	background-color: black;
-	animation: slideshowFade 5s infinite;
+	background-image: url('../images/background\ 1920x3000.png');
+}
+
+.homePage {
+	animation: slideshowFade 5s forwards;
 }
 
 @keyframes slideshowFade {
     0%
     {
-        background-image: url('../images/background.jpg');
+        background-image: url('../images/background2.png');
     }
     100%
     {
@@ -26,6 +30,7 @@ body {
 
 .homeText {
     text-align: center;
+	margin: 2em;
 }
 
 .descriptionText h1, .descriptionText h3 {
@@ -38,13 +43,7 @@ body {
 
 .homeButton {
 	margin-top: 100px;
-	padding: 0.25em 2em;
-	background-color: rgb(121, 192, 250);
-	color: white;
-	border: none;
-	border-radius: 5px;
-	font-size: 1em;
-	cursor: pointer;
+	padding: 0.5em 3em;
 }
 
 #menuToggler {
@@ -522,13 +521,6 @@ form input:not(:placeholder-shown):invalid {
 
 	100% {
 		opacity: 1;
-	}
-}
-
-
-@media screen and (min-width: 700px) {
-	header {
-		font-size: 1.2em;
 	}
 }
 
