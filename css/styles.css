@@ -180,7 +180,7 @@ main section {
 
 .showcasedGameImageText {
 	position: absolute;
-	bottom: -14px;
+	bottom: -11px;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 	padding: 5px;
@@ -324,7 +324,7 @@ button:hover {
 	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	padding: 0.5rem;
 	gap: 1rem;
-	background-color: rgb(176, 217, 250);
+	background-color: var(--background-color);
 }
 
 .resultGrid {
@@ -394,7 +394,7 @@ footer {
 	box-sizing: border-box;
 	border-style: solid;
 	border-width: 0.5em;
-	border-color: hsl(0, 70%, 50%) white;
+	border-color: hsl(182, 58%, 66%) white;
 	border-radius: 50%;
 	position: fixed;
 	left: calc(50vw - 0.5em);
@@ -402,6 +402,30 @@ footer {
 	opacity: 0;
 	animation: spin 0.5s ease-in-out alternate infinite;
 	transition: 0.5s;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(-45deg);
+	}
+
+	100% {
+		transform: rotate(45deg);
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	40% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 #loader.waiting {
@@ -500,29 +524,7 @@ form input:not(:placeholder-shown):invalid {
 	border-color: red;
 }
 
-@keyframes spin {
-	0% {
-		transform: rotate(-45deg);
-	}
 
-	100% {
-		transform: rotate(45deg);
-	}
-}
-
-@keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-
-	40% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
 
 
 /* TABLET STYLES */
