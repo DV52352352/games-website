@@ -32,6 +32,10 @@ async function doSearch() {
 }
 
 function buildArticleFromData(game) {
+  //Filters out games that have no metacritic rating
+  if(game.metacritic == null) {
+    return null;
+  }
 
   const article = document.createElement("article");
   article.classList.add('resultGrid');
@@ -64,7 +68,7 @@ function buildArticleFromData(game) {
 }
 
 async function insertArticles(gameData) {
-  const articles = gameData.map(buildArticleFromData);
+  const articles = gameData.map(buildArticleFromData).filter(game => game != null);
   articles.forEach(a => results.appendChild(a));
 }
 
