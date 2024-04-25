@@ -148,7 +148,8 @@ h2 {
 	display: none;
 }
 
-.showcasedGameImageContainer, .showcasedGameImageContainer img {
+.showcasedGameImageContainer,
+.showcasedGameImageContainer img {
 	position: relative;
 	border-radius: 20px;
 	transition: transform 0.2s;
@@ -168,7 +169,8 @@ h2 {
 	border-radius: 0 10px 0 20px;
 }
 
-.gamesTitle, .gamesDescription {
+.gamesTitle,
+.gamesDescription {
 	margin: 0;
 	padding: 0;
 	color: white;
@@ -185,7 +187,7 @@ h2 {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	color: white;
-	text-align:center;
+	text-align: center;
 	opacity: 0;
 	transition: opacity 0.25s ease;
 }
@@ -217,7 +219,7 @@ h2 {
 	border-radius: 20px;
 }
 
-.gameGrid:hover .gameGridImage{
+.gameGrid:hover .gameGridImage {
 	filter: brightness(50%);
 }
 
@@ -249,7 +251,7 @@ h2 {
 
 .gameGridColumnImage {
 	display: flex;
-	width: 100px
+	width: 100px;
 }
 
 .gameGridColumn a {
@@ -273,46 +275,46 @@ h2 {
 }
 
 .searchGamesTitle {
-    margin-bottom: -2em;
+	margin-bottom: -2em;
 }
 
 #query {
-    padding: 0.25em;
-    border: 1.75px solid #ccc;
-    border-radius: 25px;
-    font-size: 1em;
-    margin-right: 0.5em;
-    flex: 1;
+	padding: 0.25em;
+	border: 1.75px solid #ccc;
+	border-radius: 25px;
+	font-size: 1em;
+	margin-right: 0.5em;
+	flex: 1;
 }
 
 button {
-    padding: 0.25em 2em;
-    background-color: rgb(121, 192, 250);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
+	padding: 0.25em 2em;
+	background-color: rgb(121, 192, 250);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1em;
+	cursor: pointer;
 }
 
 button:hover {
-    background-color: rgb(83, 143, 192);
+	background-color: rgb(83, 143, 192);
 }
 
 .resultGrids {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	padding: 0.5rem;
-    gap: 1rem;
-    background-color: rgb(176, 217, 250);
+	gap: 1rem;
+	background-color: rgb(176, 217, 250);
 }
 
 .resultGrid {
-    width: 432px;
-    height: 243px;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    position: relative;
+	width: 432px;
+	height: 243px;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	position: relative;
 }
 
 .resultGridImage {
@@ -326,24 +328,23 @@ button:hover {
 }
 
 .resultGridText {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.25s ease;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align: center;
+	opacity: 0;
+	transition: opacity 0.25s ease;
 }
 
 .resultGrid:hover .resultGridText {
-    opacity: 1;
+	opacity: 1;
 }
 
 .resultGrid:hover .resultGridImage {
 	filter: brightness(50%);
 }
-
 
 .gamesMain {
 	gap: 2em;
@@ -362,10 +363,10 @@ article {
 
 footer {
 	position: fixed;
-    bottom: 0;
-    right: 0;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 0.5);
+	bottom: 0;
+	right: 0;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 #loader {
@@ -409,6 +410,53 @@ footer {
 	height: auto;
 	position: absolute;
 	top: 0;
+}
+
+.aboutUsHeader {
+	display: flex;
+	justify-content: center;
+}
+
+.aboutUsContainer {
+	background-color: hsla(202, 45%, 73%, 0.7);
+	text-align: center;
+	width: 100%;
+}
+
+.aboutUsTitle {
+	margin-top: 50px;
+}
+
+.aboutUsDescription {
+	margin: 0 auto 50px auto;
+	max-width: 500px;
+}
+
+.aboutUsGrids p {
+	color: white;
+	text-align: center;
+	margin: 0;
+}
+
+.aboutUsGrids {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	padding: 2em 10%;
+}	
+
+.aboutUsGrid a {
+	text-decoration: none;
+}
+
+.aboutUsGrid {
+	display: grid;
+	position: relative;
+	max-width: 100%;	
+}
+
+.aboutUsGridImage {
+	width: 100%;
+	display: grid;
 }
 
 @keyframes spin {
