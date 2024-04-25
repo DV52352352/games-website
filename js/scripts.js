@@ -27,7 +27,6 @@ async function doSearch() {
   clearResults();
   loader.classList.add("waiting");
   gameData = await loadGames(query.value);
-  count.textContent = `found ${gameData.length} results for "${query.value}"`;
   nPages.textContent = Math.ceil(gameData.length / pageSize);
   currentPage = 1;
   loadPage();
@@ -38,6 +37,9 @@ function buildArticleFromData(game) {
   if (game.metacritic == null) {
     return null;
   }
+
+  const elementResults = document.getElementById("results");
+  elementResults.style.setProperty('--background-color', 'rgb(176, 217, 250)');
 
   const article = document.createElement("article");
   article.classList.add('resultGrid');
@@ -58,10 +60,6 @@ function buildArticleFromData(game) {
   image.src = game.background_image;
   image.classList.add('resultGridImage');
   image.alt = game.name;
-
-  /*article.addEventListener('click', ev => {
-    
-  });*/
 
   article.appendChild(image);
   article.appendChild(gameDetails);
