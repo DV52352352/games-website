@@ -169,8 +169,7 @@ h2 {
 	border-radius: 0 10px 0 20px;
 }
 
-.gamesTitle,
-.gamesDescription {
+.gamesTitle, .gamesDescription {
 	margin: 0;
 	padding: 0;
 	color: white;
@@ -432,7 +431,7 @@ footer {
 	max-width: 500px;
 }
 
-.aboutUsGrids p {
+.aboutUsGrids h3 {
 	color: white;
 	text-align: center;
 	margin: 0;
@@ -444,10 +443,6 @@ footer {
 	padding: 2em 10%;
 }
 
-.aboutUsGrid a {
-	text-decoration: none;
-}
-
 .aboutUsGrid {
 	display: grid;
 	position: relative;
@@ -457,6 +452,14 @@ footer {
 .aboutUsGridImage {
 	width: 100%;
 	display: grid;
+}
+
+.aboutUsGrid:hover .aboutUsGridImage {
+	filter: brightness(50%);
+}
+
+.aboutUsGrid:hover .gridGamesTitle {
+	opacity: 1;
 }
 
 form {
