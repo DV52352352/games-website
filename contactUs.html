@@ -29,7 +29,7 @@
     <section class="aboutUsGrids">
       <article class="aboutUsGrid">
         <img src="images/paladins_image.jpg" alt="test" class="aboutUsGridImage">
-        <p>Paladins</p>
+        <p>Casual Gamers</p>
       </article>
       <article class="aboutUsGrid">
         <a href="https://www.rocketleague.com/en">
@@ -43,21 +43,24 @@
           <p>Valorant</p>
         </a>
       </article>
-      <article class="aboutUsGrid">
-        <a href="https://playvalorant.com/en-gb/">
-          <img src="images/valorant_image.jpg" alt="test" class="aboutUsGridImage">
-          <p>Valorant</p>
-        </a>
-      </article>
     </section>
     <header class="aboutUsHeader">
       <div class="aboutUsContainer">
-        <h1 class="aboutUsTitle">About Gamers Hub</h1>
-        <p class="aboutUsDescription">This is a hub for people that are searching for games. Whenever you are a casual player or a 
-          pro gamer, this website will provide games that anyone can enjoy. 
-        </p>
+        <h1 class="aboutUsTitle">Ask me a question</h1>
+        <section data-name="form">
+          <form id="login">
+            <label for="myUser">Name: </label>
+            <input id="myUser" name="name" placeholder="enter your name" required>
+            <label for="email">Email: </label>
+            <input id="myUser" name="email" type="email" placeholder="enter your email" required>
+            <label for="myConfirmation">Message: </label>
+            <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+            <input type="submit" value="login">
+          </form>
+        </section>
       </div>
     </header>
+    
   </main>
   <script src="js/scripts.js"></script>
 </body>
