@@ -25,7 +25,7 @@
         </p>
       </div>
     </header>
-    <section class="aboutUsGrids">
+    <div class="aboutUsGrids">
       <article class="aboutUsGrid">
         <h3>Casual Gamers</h3>
         <img src="images/stardrew_valley_image.jpg" alt="test" class="aboutUsGridImage">
@@ -46,21 +46,21 @@
         <img src="images/minecraft_education_edition_image.jpg" alt="test" class="aboutUsGridImage">
         <p class="gridGamesTitle">Minecraft Education Edition</p>
       </article>
-    </section>
+    </div>
     <header class="aboutUsHeader">
       <div class="aboutUsContainer2">
         <h1 class="aboutUsTitle">Ask me a question</h1>
-        <section data-name="form">
+        <div data-name="form" class="questionForm">
           <form id="login">    
-            <label for="myMessage">Name: </label>
-            <input id="myMessage" name="name" placeholder="enter your name" required>
-            <label for="email">Email: </label>
-            <input id="myMessage" name="email" type="email" placeholder="enter your email" required>
+            <label for="myName">Name: </label>
+            <input id="myName" name="name" placeholder="enter your name" required>
+            <label for="myEmail">Email: </label>
+            <input id="myEmail" name="email" type="email" placeholder="enter your email" required>
             <label for="myConfirmation">Message: </label>
-            <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+            <textarea id="myConfirmation" name="description" rows="4" cols="50" required></textarea>
             <input type="submit" value="login">
           </form>
-        </section>
+        </div>
       </div>
     </header> 
   </main>
