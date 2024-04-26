@@ -1,35 +1,20 @@
 "use strict";
 
+let pageSize = 12;
+let currentPage;
+let games;
+let apiKey = '877a9f1fba75487095118a5fb2777bd8';
+
 menuToggler.addEventListener('click', ev => {
   menu.classList.toggle('open');
   menuToggler.textContent = menuToggler.textContent === "×" ? "≡" : "×";
 });
-
-let pageSize = 12;
-let currentPage;
-let gameData;
-
-let apiKey = '877a9f1fba75487095118a5fb2777bd8';
 
 async function loadGames(query) {
   let baseURL = `https://api.rawg.io/api/games`;
   const response = await fetch(`${baseURL}?key=${apiKey}&search=${query}`);
   const data = await response.json();
   return data.results;
-}
-
-async function insertGames(gameData) {
-  const articles = gameData.map(buildArticleFromData);
-  articles.forEach(a => results.appendChild(a));
-}
-
-async function doSearch() {
-  clearResults();
-  loader.classList.add("waiting");
-  gameData = await loadGames(query.value);
-  nPages.textContent = Math.ceil(gameData.length / pageSize);
-  currentPage = 1;
-  loadPage();
 }
 
 function buildArticleFromData(game) {
@@ -67,8 +52,22 @@ function buildArticleFromData(game) {
   return article;
 }
 
-async function insertArticles(gameData) {
-  const articles = gameData.map(buildArticleFromData).filter(game => game != null);
+async function insertGames(games) {
+  const articles = games.map(buildArticleFromData);
+  articles.forEach(a => results.appendChild(a));
+}
+
+async function doSearch() {
+  clearResults();
+  loader.classList.add("waiting");
+  games = await loadGames(query.value);
+  nPages.textContent = Math.ceil(games.length / pageSize);
+  currentPage = 1;
+  loadPage();
+}
+
+async function insertArticles(games) {
+  const articles = games.map(buildArticleFromData).filter(game => game != null);
   articles.forEach(a => results.appendChild(a));
 }
 
@@ -80,7 +79,7 @@ function clearResults() {
 
 async function loadPage() {
   clearResults();
-  const myGames = gameData.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const myGames = games.slice((currentPage - 1) * pageSize, currentPage * pageSize);
   loader.classList.add("waiting");
   await insertArticles(myGames);
   loader.classList.remove("waiting");
@@ -89,14 +88,14 @@ async function loadPage() {
 
 function nextPage() {
   currentPage += 1;
-  const nPages = Math.ceil(gameData.length / pageSize);
+  const nPages = Math.ceil(games.length / pageSize);
   if (currentPage > nPages) { currentPage = 1; }
   loadPage();
 }
 
 function prevPage() {
   currentPage -= 1;
-  const nPages = Math.ceil(gameData.length / pageSize);
+  const nPages = Math.ceil(games.length / pageSize);
   if (currentPage < 1) { currentPage = nPages; }
   loadPage();
 }
@@ -105,8 +104,6 @@ try {
   prev.addEventListener('click', prevPage);
   next.addEventListener('click', nextPage);
   query.addEventListener('change', doSearch);
-} catch(error) {
+} catch (error) {
   console.error("prev, next and query not found. If this is not the search games page then you can ignore this message");
 }
-
-

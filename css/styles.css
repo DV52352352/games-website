@@ -1,12 +1,9 @@
-/* MOBILE AND GLOBAL STYLES */
-
-/* applies to screens smaller than 500px (first breakpoint) */
-/* and above unless overwritten below */
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 body {
-	font-family: "Rubik Mono One", sans-serif;
+	font-family: "Rubik", sans-serif;
+	font-weight: 500;
+	font-size: 20px;
 	color: white;
 	margin: 0;
 	background-color: rgb(22, 21, 27);
@@ -33,7 +30,8 @@ body {
 	margin: 2em;
 }
 
-.descriptionText h1, .descriptionText h3 {
+.descriptionText h1,
+.descriptionText h3 {
 	margin: 0;
 }
 
@@ -125,7 +123,8 @@ main {
 
 }
 
-main section, .questionForm {
+main section,
+.questionForm {
 
 	margin: 0em;
 	padding: 2.5em;
@@ -183,12 +182,13 @@ main section, .questionForm {
 	display: flex;
 }
 
-.showcasedGameImageContainer, .showcasedGameImageContainer img {
+.showcasedGameImageContainer,
+.showcasedGameImageContainer img {
 	position: relative;
 	border-radius: 20px;
 	transition: transform 0.2s;
 	max-width: 100%;
-    height: auto; 
+	height: auto;
 }
 
 .showcasedGameImageContainer:hover {
@@ -198,14 +198,15 @@ main section, .questionForm {
 
 .showcasedGameImageText {
 	position: absolute;
-	bottom: -11px;
+	bottom: -15px;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 	padding: 5px;
 	border-radius: 0 10px 0 20px;
 }
 
-.gamesTitle, .gamesDescription {
+.gamesTitle,
+.gamesDescription {
 	margin: 0;
 	padding: 0;
 	color: white;
@@ -285,7 +286,7 @@ main section, .questionForm {
 .gameGridColumn {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	padding: 1;
+	padding: 1px;
 }
 
 .gameGridColumnImage {
@@ -336,7 +337,8 @@ button {
 	cursor: pointer;
 }
 
-button:hover, .homeButton:hover {
+button:hover,
+.homeButton:hover {
 	background-color: rgb(83, 143, 192);
 }
 
@@ -399,7 +401,7 @@ article {
 	padding: 0.5em 0;
 	text-align: center;
 	white-space: nowrap;
-	
+
 }
 
 
@@ -580,7 +582,7 @@ form input:not(:placeholder-shown):invalid {
 	.gamesMain h1 {
 		font-size: 22px;
 	}
-	
+
 	.resultGrids {
 		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 	}
