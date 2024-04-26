@@ -29,4 +29,9 @@ About Me Page [aboutMe.html](https://github.com/CTEC3905-2022/assignment-DV52352
 ## 🔎 API used
 
 [RAWG Video Games Database API](https://rawg.io/apidocs) was used for the website as it stores information on a vast amount of games.
-Note that sometimes you can get a 502 bad gateway error by searching for games. Refresh the page and try again.
+Note that sometimes you can get a 502 bad gateway error by searching for games. Refresh the page and try again. <br>
+A guide to how to use the API was shown here [API Guide](https://api.rawg.io/docs/)
+
+## 🎓 External learning resources
+
+- W3Schools [How to zoom on hover](https://www.w3schools.com/howto/howto_css_zoom_hover.asp)
