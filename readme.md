@@ -1,6 +1,6 @@
 # Gamers Hub Website (CTEC3905 Assignment)
 
-This website shows a collection of games, ther are 4 seperate pages
+This website shows a collection of games, there are 4 seperate pages
 
 Home Page [index.html](https://github.com/CTEC3905-2022/assignment-DV52352352/blob/master/index.html)
 ![home page (index.html)](https://github.com/CTEC3905-2022/assignment-DV52352352/blob/master/images/home_page_screenshot.png)
