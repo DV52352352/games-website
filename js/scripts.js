@@ -101,6 +101,12 @@ function prevPage() {
   loadPage();
 }
 
-prev.addEventListener('click', prevPage);
-next.addEventListener('click', nextPage);
-query.addEventListener('change', doSearch);
+try {
+  prev.addEventListener('click', prevPage);
+  next.addEventListener('click', nextPage);
+  query.addEventListener('change', doSearch);
+} catch(error) {
+  console.error("prev, next and query not found. If this is not the search games page then you can ignore this message");
+}
+
+

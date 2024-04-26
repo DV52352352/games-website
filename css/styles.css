@@ -9,8 +9,9 @@ body {
 	font-family: "Rubik Mono One", sans-serif;
 	color: white;
 	margin: 0;
-	background-color: black;
+	background-color: rgb(22, 21, 27);
 	background-image: url('../images/background\ 1920x3000.png');
+	background-repeat: no-repeat;
 }
 
 .homePage {
@@ -32,8 +33,7 @@ body {
 	margin: 2em;
 }
 
-.descriptionText h1,
-.descriptionText h3 {
+.descriptionText h1, .descriptionText h3 {
 	margin: 0;
 }
 
@@ -169,14 +169,15 @@ main section {
 }
 
 .showcasedGameImages {
-	display: none;
+	display: flex;
 }
 
-.showcasedGameImageContainer,
-.showcasedGameImageContainer img {
+.showcasedGameImageContainer, .showcasedGameImageContainer img {
 	position: relative;
 	border-radius: 20px;
 	transition: transform 0.2s;
+	max-width: 100%;
+    height: auto; 
 }
 
 .showcasedGameImageContainer:hover {
@@ -193,8 +194,7 @@ main section {
 	border-radius: 0 10px 0 20px;
 }
 
-.gamesTitle,
-.gamesDescription {
+.gamesTitle, .gamesDescription {
 	margin: 0;
 	padding: 0;
 	color: white;
@@ -218,7 +218,7 @@ main section {
 
 .gameGrids {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 2rem;
 	padding: 0;
 }
@@ -302,15 +302,13 @@ main section {
 	margin-bottom: -2em;
 }
 
-
 #query {
 	padding: 0.25em;
 	border: 1.75px solid #ccc;
 	border-radius: 25px;
 	font-size: 1em;
 	margin-right: 0.5em;
-	flex: 1;
-	width: 60%;
+	width: 80%
 }
 
 button {
@@ -382,10 +380,13 @@ article {
 }
 
 #meta {
-	display: flex;
 	justify-content: space-between;
 	padding: 0.5em 0;
+	text-align: center;
+	white-space: nowrap;
+	
 }
+
 
 footer {
 	position: fixed;
@@ -468,6 +469,11 @@ footer {
 }
 
 .aboutUsContainer {
+	text-align: center;
+	width: 100%;
+}
+
+.aboutUsContainer2 {
 	background-color: hsla(202, 45%, 73%, 0.7);
 	text-align: center;
 	width: 100%;
@@ -491,7 +497,7 @@ footer {
 .aboutUsGrids {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	padding: 2em 10%;
+	padding: 2em 6em;
 }
 
 .aboutUsGrid {
@@ -503,6 +509,7 @@ footer {
 .aboutUsGridImage {
 	width: 100%;
 	display: grid;
+	border-radius: 2em;
 }
 
 .aboutUsGrid:hover .aboutUsGridImage {
@@ -532,14 +539,46 @@ form input:not(:placeholder-shown):invalid {
 	border-color: red;
 }
 
-
-
-
 /* TABLET STYLES */
 
 @media screen and (min-width: 500px) {
 
 	/* applies to screens wider than 499px */
+
+	.gamesMain {
+		padding-left: 0%;
+		padding-right: 0%;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.gameGrids {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.listOfGames {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	}
+
+	.gamesMain h1 {
+		font-size: 22px;
+	}
+	
+	.resultGrids {
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	}
+}
+
+@media screen and (max-width: 501px) {
+	.resultGrid {
+		width: 216px;
+		height: 121.5px;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		position: relative;
+	}
 
 	.gamesMain {
 		padding-left: 0%;
@@ -571,9 +610,15 @@ form input:not(:placeholder-shown):invalid {
 
 }
 
+@media screen and (max-width: 515px) {
+	.aboutUsGrid {
+		padding-bottom: 2em;
+	}
+}
+
 /* DESKTOP STYLES */
 
-@media screen and (min-width: 100px) {
+@media screen and (min-width: 420px) {
 
 	/* applies to screens wider than 999px */
 
@@ -584,7 +629,7 @@ form input:not(:placeholder-shown):invalid {
 	}
 
 	.gamesMain {
-		padding-left: 20%;
-		padding-right: 20%;
+		padding-left: 5%;
+		padding-right: 5%;
 	}
 }
